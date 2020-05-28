@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 
+
 print(os.getcwd())
 # This prints out the current working directory where getcwd means " get current working directory"
 
@@ -18,7 +19,7 @@ print(os.path.join('/home/eminentfablous/PycharmProjects/PythonScripting',
 # This joins directories to be one path
 
 print(os.path.split('/home/eminentfablous/PycharmProjects/PythonScripting/sysmodule.py'))
-# This splits directiories into seperate parts
+# This splits directiories and the file into seperate parts
 
 print(os.path.exists('/home/eminentfablous/PycharmProjects/PythonScripting/sysmodule.py'))
 # This prints true or false depending whether file or directory exists
@@ -45,10 +46,12 @@ for dirpath, dirname, filename in os.walk(os.getcwd()):
     print('Directory:', dirname)
     print('Files:', filename)
 """
+
 This is a generator that yeilds a tuple of tree values as its walking the directory.
 For each directory it sees, it yeilds the directory path, directories within that path 
 and the files within that path. These can be useful if you want to search through path for files and
 directories
+
 """
 
 print(os.environ)
@@ -58,3 +61,20 @@ print(os.environ.get('HOME'))
 file_name = os.path.join(os.environ.get('HOME'), 'text.py')
 # This joins the path of the environment variables and the 'text.py' file. Note that joining does not create the file
 print(file_name)
+
+
+print(os.path.basename("/home/eminentfablous/PycharmProjects/PythonScripting/sysmodule.py"))
+# This prints the name of the file or directory
+print(os.path.dirname("/home/eminentfablous/PycharmProjects/PythonScripting/sysmodule.py"))
+# This prints the name of a directory whether or not the path contains a file
+print(os.path.isdir("/home/eminentfablous/PycharmProjects/PythonScripting/sysmodule.py"))
+# This is a function that prints true or false depending if the path is a directory or not
+print(os.path.isfile("/home/eminentfablous/PycharmProjects/PythonScripting/sysmodule.py"))
+# This is a function that prints true or false depending if the path is a file or not
+print(os.path.splitext("/home/eminentfablous/PycharmProjects/PythonScripting/sysmodule.py"))
+# This is a function that splits a file into its name and extension
+
+"""
+Note: This is just a summary of the os can be used for. You can always think of ways to implement it in ur
+daily coding routine for automation
+"""
